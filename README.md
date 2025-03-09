@@ -11,13 +11,23 @@ Para eso ir a la seccion:
 
         $ git clone https://github.com/IngSoft1-Capybaras/switcher-frontend.git
 
-* Nos Posicionamos en el directorio y ejecutar los dos comandos siguientes
+* Nos posicionamos en el directorio y ejecutar los dos comandos siguientes
         
         $ cd switcher
         $ npm install
         $ npm run dev       # Para ejecutar en computadoras
 
-* Para levantar el proyecto en dispositivo moviles ejecutamos este comando:
+* Para que funcione en dispositivo moviles hacemos lo siguiente:
+
+        ## vamos al archivo .env y modificamos estas dos lineas:
+        # VITE_SOCKET_URL=ws://localhost:8000/ws
+        # VITE_API_URL=http://localhost:8000
+        ## Por esta dos lineas: 
+        VITE_SOCKET_URL=ws://192.168.x.x:8000/ws
+        VITE_API_URL=http://192.168.x.x:8000
+        ## Donde la x son las direccion IP de la notebook
+
+* Luego, ejecutamos este comando:
 
         $ npm run dev -- --host 0.0.0.0
 
